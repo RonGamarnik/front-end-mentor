@@ -65,7 +65,8 @@ function App() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="ml-16 mt-20 mb-20 flex">
+    <div className=" bg-rose_100">
+    <div className="ml-16 pt-20 pb-20 flex ">
       <div className="w-2/3">
         <h1 className="font-bold text-5xl mb-6">Desserts</h1>
         <ProductsCards
@@ -75,7 +76,8 @@ function App() {
         />
       </div>
       <CartCard cart={cart} updateCart={updateCart} />{" "}
-    </div>
+      </div>
+      </div>
   );
 }
 

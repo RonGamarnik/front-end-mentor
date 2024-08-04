@@ -69,28 +69,28 @@ function ProductsCards({ products, cart, updateCart }: ProductsCardsProps) {
       {products.map((product: Product) => {
         const quantityInCart = getProductQuantityInCart(product.id);
         return (
-          <Card key={product.id} className={`flex flex-col p-0 border-0 `}>
+          <Card key={product.id} className={`flex flex-col p-0 border-none shadow-none bg-transparent `}>
             <CardContent className="p-0">
               <img
                 src={product.image}
                 alt={product.name}
                 className={`rounded-md border-spacing-2 w-60 mx-0 h-60 object-cover ${
-                  quantityInCart > 0 ? "border-orange-400 border-2" : ""
+                  quantityInCart > 0 ? "border-red_1 border-2" : ""
                 }`}
               />
               {quantityInCart > 0 ? (
                 <div className="flex justify-center items-center relative bottom-6 right-2">
                   <Button
-                    className="bg-orange-700 hover:bg-orange-600 text-white rounded-l-3xl -mr-1"
+                    className="bg-red_1 hover:bg-orange-600 text-white rounded-l-3xl -mr-1"
                     onClick={() => updateCartItem(product.id, "remove")}
                   >
                     <CiCircleMinus className="size-6" />
                   </Button>
-                  <span className="bg-orange-700 text-white px-4 py-2">
+                  <span className="bg-red_1 text-white px-4 py-2">
                     {quantityInCart}
                   </span>
                   <Button
-                    className="bg-orange-700 hover:bg-orange-600 text-white rounded-r-3xl -ml-1"
+                    className="bg-red_1 hover:bg-orange-600 text-white rounded-r-3xl -ml-1"
                     onClick={() => updateCartItem(product.id, "add")}
                   >
                     <CiCirclePlus className="size-6" />
@@ -110,7 +110,7 @@ function ProductsCards({ products, cart, updateCart }: ProductsCardsProps) {
                   {product.category}
                 </p>
                 <h3 className="font-bold">{product.name}</h3>
-                <p className="text-orange-400 font-semibold">
+                <p className="text-red_1 font-semibold">
                   ${product.price.toFixed(2)}
                 </p>
               </div>
